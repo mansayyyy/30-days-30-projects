@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drag and Drop</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1 class="heading">Rearrange the Phrases in Second Column</h1>
+    <div class="container">
+        <div id="left">
+            <div class="list" draggable="true">
+                <img src="i1.jpg" alt="">sky, a roaring
+            </div>
+            <div class="list" draggable="true">
+                <img src="i1.jpg" alt="">the wilderness
+            </div>
+            <div class="list" draggable="true">
+                <img src="i1.jpg" alt="">underneath the starry
+            </div>
+            <div class="list" draggable="true">
+                <img src="i1.jpg" alt="">waterfall cascades through
+            </div>
+        </div>
+        <div id="right"></div>
+    </div>
+
+    <script>
+
+        let lists = document.getElementsByClassName("list");
+        let rightBox = document.getElementById("right");
+        let leftBox = document.getElementById("left");
+
+        for(list of lists)
+        {
+            list.addEventListener("dragstart", function(e){
+                let selected = e.target;
+
+                rightBox.addEventListener("dragover", function(e){
+                    e.preventDefault();
+                });
+                rightBox.addEventListener("drop", function(e){
+                    rightBox.appendChild(selected);
+                    selected = null;
+                });
+                leftBox.addEventListener("dragover", function(e){
+                    e.preventDefault();
+                });
+                leftBox.addEventListener("drop", function(e){
+                    leftBox.appendChild(selected);
+                    selected = null;
+                });
+            });
+
+        }
+    </script>
+</body>
+</html>

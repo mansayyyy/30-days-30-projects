@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Gallery</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="gallery-wrap">
+      <img src="images/left.png" alt="" id="leftBtn"/>
+      <div class="gallery">
+        <div>
+          <span><img src="images/i1.jpg" alt="" /></span>
+          <span><img src="images/i2.jpg" alt="" /></span>
+          <span><img src="images/i3.jpg" alt="" /></span>
+        </div>
+        <div>
+          <span><img src="images/i4.jpg" alt="" /></span>
+          <span><img src="images/i5.jpg" alt="" /></span>
+          <span><img src="images/i6.jpg" alt="" /></span>
+        </div>
+        <div>
+          <span><img src="images/i7.jpg" alt="" /></span>
+          <span><img src="images/i8.jpg" alt="" /></span>
+          <span><img src="images/i9.jpg" alt="" /></span>
+        </div>
+        <div>
+            <span><img src="images/i10.jpg" alt="" /></span>
+            <span><img src="images/i11.jpg" alt="" /></span>
+            <span><img src="images/i12.jpg" alt="" /></span>
+          </div>
+          <div>
+            <span><img src="images/i13.jpg" alt="" /></span>
+            <span><img src="images/i14.jpg" alt="" /></span>
+            <span><img src="images/i15.jpg" alt="" /></span>
+          </div>
+      </div>
+      <img src="images/right.png" alt="" id="rightBtn"/>
+    </div>
+
+
+    <script>
+        let scrollContainer = document.querySelector(".gallery")
+        let leftBtn = document.getElementById("leftBtn");
+        let rightBtn = document.getElementById("rightBtn");
+
+        scrollContainer.addEventListener("wheel", (evt) =>{
+            evt.preventDefault();
+            scrollContainer.scrollLeft += evt.deltaY;
+            scrollContainer.style.scrollBehaviour = "auto";
+        });
+
+        rightBtn.addEventListener("click", ()=>{
+            scrollContainer.style.scrollBehaviour = "smooth";
+            scrollContainer.scrollLeft += 900;
+        });
+        leftBtn.addEventListener("click", ()=>{
+            scrollContainer.style.scrollBehaviour = "smooth";
+            scrollContainer.scrollLeft -= 900;
+        });
+    </script>
+  </body>
+</html>
