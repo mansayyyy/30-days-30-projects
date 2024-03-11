@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Potta+One&family=Roboto:wght@100&display=swap"
+        rel="stylesheet">
+        <link rel="stylesheet" href="prism.css">
+        <script src="prism.js"></script>
+        <link rel="stylesheet" href="style.css">
+    <title>HTML Cheatsheet by Mansi</title>
+</head>
+
+<body>
+    <nav>
+        <span class="logo"><img src="logo.png" alt=""></span>
+        <div class="content center">
+            This HTML Cheatsheet is For You!
+        </div>
+    </nav>
+    <div class="container">
+        <ol>
+            <li><b>HTML Boilerplate:</b> This is the basic html boilerplate code
+                <pre class="language-html"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    
+&lt;/body&gt;
+&lt;/html&gt; </code></pre>
+            </li> 
+            <li><b>List Item Element</b> Ordered list and Unordered List
+                <pre class="language-js"><code>&lt;ol&gt;
+&lt;li&gt;"Head east on Prince St"&lt;/li&gt;
+&lt;li&gt;"Turn left on Elizabeth"&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;ul&gt;
+&lt;li&gt;"Cookies"&lt;/li&gt;
+&lt;li&gt;"Milk"&lt;/li&gt;
+&lt;/ul&gt; </code></pre>
+            </li> 
+            <li><b>Em Tag: </b> Emphasis Element
+                <pre class="language-js"><code>&lt;p&gt;"This &lt;em&gt;word&lt;/em&gt; will be emphasized in italics."&lt;/p&gt;
+                     </code></pre>
+            </li> 
+            <li><b>Video Tag</b> This is the video element
+                <pre class="language-js"><code>&lt;video src="test-video.mp4" controls&gt;
+Video not supported
+&lt;/video&gt; </code></pre>
+            </li> 
+            <li><b>Img Tag</b> This is the image element
+                <pre class="language-js"><code>&lt;img src="image.png"&gt; </code></pre>
+            </li> 
+            <li><b>Div tag: </b>The element is used as a container that divides an HTML document into sections
+                <pre class="language-js"><code>&lt;div&gt;
+&lt;h1&gt;"A section of grouped elements"&lt;/h1&gt;
+&lt;p&gt;"Here’s some text for the section"&lt;/p&gt;
+&lt;/div&gt;
+&lt;div&gt;
+&lt;h1&gt;"Second section of grouped elements"&lt;/h1&gt;
+&lt;p&gt;"Here’s some text"&lt;/p&gt;
+&lt;/div&gt; </code></pre>
+            </li> 
+            <li><b>H1-H6: </b> These are the Heading elements
+                <pre class="language-js"><code>&lt;h1&gt;"Breaking News"&lt;/h1&gt;
+&lt;h2&gt;"This is the 1st subheading"&lt;/h2&gt;
+&lt;h3&gt;"This is the 2nd subheading"&lt;/h3&gt;
+&lt;h4&gt;"This is the 3rd subheading"&lt;/h4&gt;
+&lt;h5&gt;"This is the 4th subheading"&lt;/h5&gt;
+&lt;h6&gt;"This is the 5th subheading"&lt;/h6&gt; </code></pre>
+            </li> 
+            <li><b>Span Tag: </b> The element is an inline container for text and can be used to group text for styling purposes
+                <pre class="language-js"><code>&lt;p&gt;&lt;span&gt;"This text&lt;/span&gt; may be styled differently than the surrounding text."&lt;/p&gt; </code></pre>
+            </li> 
+            <li><b>Strong element: </b> The element highlights important, serious, or urgent text and <strong>BOLD</strong> the text
+                <pre class="language-js"><code>&lt;p&gt;"This is &lt;strong&gt;important&lt;/strong&gt; text!"&lt;/p&gt;</code></pre>
+            </li> 
+            <li><b>Anchor Tag: </b> The anchor element is used to create hyperlinks in an HTML document
+                <pre class="language-js"><code>&lt;!-- Creating text links --&gt;
+&lt;a href="http://www.codecademy.com"&gt;Visit this site&lt;/a&gt;
+                    
+&lt;!-- Creating image links --&gt;
+&lt;a href="http://www.codecademy.com"&gt;
+&lt;img src="logo.jpg"&gt;Click this image
+&lt;/a&gt; </code></pre>
+            </li> 
+            <li><b>Table Tag: </b>The element has content that is used to represent a two-dimensional table made of rows and columns
+                <pre class="language-js"><code>&lt;table&gt;
+&lt;!-- "rows and columns will go here" --&gt;
+&lt;/table&gt;</code></pre>
+            </li> 
+            <li><b>Style Tag: </b> This is used to define style information (CSS) for a document
+                <pre class="language-js"><code>&lt;style&gt;
+#first {
+font-family: Castellar;
+background-color: green;
+color: white;
+}                  
+.second {
+text-align: center;
+background-color: white;
+font-size: 30px;
+color: red;
+}
+&lt;/style&gt; </code></pre>
+            </li> 
+            <li><b>Sub and Sup Tag: </b> This is used when to write the text as subscript or superscript
+                <pre class="language-js"><code>&lt;div&gt;MANSI&lt;sub&gt;subscript text&lt;/sub&gt;&lt;/div&gt;
+&lt;!-- superscript --&gt;
+&lt;div&gt;MANSI&lt;sup&gt;Superscript text&lt;/sup&gt;&lt;/div&gt; </code></pre>
+            </li> 
+            <li><b>Form Tag:</b> It represents a document section containing interactive controls for submitting information
+                <pre class="language-js"><code>&lt;form action="/action_page.php" method="get"&gt;
+&lt;label for="fname"&gt;First name:&lt;/label&gt;
+&lt;input type="text" id="fname" name="fname"&gt;&lt;br&gt;&lt;br&gt;
+&lt;label for="lname"&gt;Last name:&lt;/label&gt;
+&lt;input type="text" id="lname" name="lname"&gt;&lt;br&gt;&lt;br&gt;
+&lt;input type="submit" value="Submit"&gt;
+&lt;/form&gt; </code></pre>
+            </li> 
+            <li><b>Textarea Tag:</b> It defines a multi-line text input controls
+                <pre class="language-js"><code>&lt;textarea id="w3review" name="w3review" rows="4" cols="50"&gt;
+"This is a basic webpage for HTML cheatsheet codes."
+"This will help you work faster and easily copy paste code snippets to you HTML file."
+&lt;/textarea&gt; </code></pre>
+            </li> 
+            <li><b>Option Tag:</b> It gives a dropdown menu to select options
+                <pre class="language-js"><code>&lt;label for="cars"&gt;Choose a car:&lt;/label&gt;
+&lt;select id="cars"&gt;
+&lt;option value="volvo"&gt;Volvo&lt;/option&gt;
+&lt;option value="saab"&gt;Saab&lt;/option&gt;
+&lt;option value="opel"&gt;Opel&lt;/option&gt;
+&lt;option value="audi"&gt;Audi&lt;/option&gt;
+&lt;/select&gt; </code></pre>
+            </li> 
+            <li><b>Blockquote Tag:</b> It specifies a section that is quoted from another source
+                <pre class="language-js"><code>&lt;blockquote cite="http://www.worldwildlife.org/who/index.html"&gt;
+"For 50 years, WWF has been protecting the future of nature." 
+"The world's leading conservation organization, WWF works"
+"in 100 countries and is supported by 1.2 million members"
+"in the United States and close to 5 million globally."
+&lt;/blockquote&gt; </code></pre>
+            </li> 
+            <li><b>Del Tag:</b> It defines text that has been deleted from a document
+                <pre class="language-js"><code>&lt;p&gt;My favorite color is &lt;del&gt;blue&lt;/del&gt; &lt;ins&gt;red&lt;/ins&gt;!&lt;/p&gt
+                </code></pre>
+            </li> 
+            <li><b>Footer Tag:</b> It defines a footer for a document or section
+                <pre class="language-js"><code>&lt;footer&gt;
+&lt;p&gt;Author: Hege Refsnes&lt;/p&gt;
+&lt;p&gt;&lt;a href="mailto:hege@example.com"&gt;hege@example.com&lt;/a&gt;&lt;/p&gt;
+&lt;/footer&gt; </code></pre>
+            </li> 
+            <li><b>Fieldset Tag:</b> It is used to group related elements in a form and draws a box around them
+                <pre class="language-js"><code>&lt;form action="/action_page.php"&gt;
+&lt;fieldset&gt;
+&lt;legend&gt;Personalia:&lt;/legend&gt;
+&lt;label for="fname"&gt;First name:&lt;/label&gt;
+&lt;input type="text" id="fname" name="fname"&gt;&lt;br&gt;&lt;br&gt;
+&lt;label for="lname"&gt;Last name:&lt;/label&gt;
+&lt;input type="text" id="lname" name="lname"&gt;&lt;br&gt;&lt;br&gt;
+&lt;label for="email"&gt;Email:&lt;/label&gt;
+&lt;input type="email" id="email" name="email"&gt;&lt;br&gt;&lt;br&gt;
+&lt;label for="birthday"&gt;Birthday:&lt;/label&gt;
+&lt;input type="date" id="birthday" name="birthday"&gt;&lt;br&gt;&lt;br&gt;
+&lt;input type="submit" value="Submit"&gt;
+&lt;/fieldset&gt;
+&lt;/form&gt; </code></pre>
+            </li> 
+        </ol>
+    </div>
+</body>
+
+</html>

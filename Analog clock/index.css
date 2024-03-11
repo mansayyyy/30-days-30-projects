@@ -1,0 +1,40 @@
+body{
+    background: linear-gradient(#9c4747, #7c6b6b);
+}
+
+#clockContainer{
+    position: relative;
+    margin: auto;
+    height: 650px;
+    width: 650px;
+    background: url(image.png) no-repeat;
+    border-radius: 500px;
+    background-size: 100%;
+}
+
+#hour, #minute, #second{
+    position: absolute;
+    background: black;
+    border-radius: 10px;
+    transform-origin: bottom;
+}
+
+#hour{
+    width: 2%;
+    height: 20%;
+    top: 29.5%;
+    left: 49%;
+}
+#minute{
+    width: 1.5%;
+    height: 30%;
+    top: 19.5%;
+    left: 49.5%;
+    
+}
+#second{
+    width: 1%;
+    height: 40%;
+    top: 9.5%;
+    left: 49.5%;
+}
