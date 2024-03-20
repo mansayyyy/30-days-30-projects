@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Music Player Design</title>
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/4a43d48d29.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="music-player">
+        <nav>
+          <div class="circle">
+            <i class="fa-solid fa-angle-left"></i>
+          </div>
+          <div class="circle">
+            <i class="fa-solid fa-bars"></i>
+          </div>
+        </nav>
+        <img src="media/thumbnail.jpg" class="song-img" id="song-thumbnail" />
+        <h1 id="song-title">Ram Siya Ram</h1>
+        <p id="artist">Sachet Tandon || Parampara Tandon</p>
+
+        <audio id="song">
+          <source src="media/Ram-Siya.mp3" type="audio/mpeg" />
+        </audio>
+        <audio id="song2">
+          <source
+            src="media/Born To Shine - Diljit Dosanjh.mp3"
+            type="audio/mpeg"
+          />
+        </audio>
+        <audio id="song3">
+          <source src="media/Kallo.mp3" type="audio/mpeg" />
+        </audio>
+        <audio id="song4">
+          <source src="media/Lover.mp3" type="audio/mpeg" />
+        </audio>
+
+        <input type="range" value="0" id="progress" />
+
+        <div class="controls">
+          <div onclick="backward()">
+            <i class="fa-solid fa-backward"></i>
+          </div>
+          <div onclick="playPause()">
+            <i class="fa-solid fa-play" id="ctrlIcon"></i>
+          </div>
+          <div onclick="forward()">
+            <i class="fa-solid fa-forward"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      let progress = document.getElementById("progress");
+      let song = document.getElementById("song");
+      let song2 = document.getElementById("song2");
+      let song3 = document.getElementById("song3");
+      let song4 = document.getElementById("song4");
+      let ctrlIcon = document.getElementById("ctrlIcon");
+
+      let currentSong = 1;
+
+      function updateThumbnail() {
+        let thumbnail = document.getElementById("song-thumbnail");
+        if (currentSong === 1) {
+          thumbnail.src = "media/thumbnail.jpg"; // Update with the actual path
+        } else if (currentSong === 2) {
+          thumbnail.src = "media/borntoshine.jpeg"; // Update with the actual path
+        } else if (currentSong === 3) {
+          thumbnail.src = "media/kallo.jpg"; // Update with the actual path
+        } else if (currentSong === 4) {
+          thumbnail.src = "media/lover.jpeg"; // Update with the actual path
+        }
+      }
+
+      function playPause() {
+        // Toggle play/pause icon
+        if (ctrlIcon.classList.contains("fa-pause")) {
+          song.pause();
+          song2.pause();
+          song3.pause();
+          song4.pause();
+          ctrlIcon.classList.remove("fa-pause");
+          ctrlIcon.classList.add("fa-play");
+        } else {
+          if (currentSong === 1) {
+            song.play();
+            document.getElementById("song-title").innerText = "Ram Siya Ram";
+            document.getElementById("artist").innerText =
+              "Sachet Tandon || Parampara Tandon";
+          } else if (currentSong === 2) {
+            song2.play();
+            document.getElementById("song-title").innerText = "Born To Shine";
+            document.getElementById("artist").innerText = "Diljit Dosanjh";
+          } else if (currentSong === 3) {
+            song3.play();
+            document.getElementById("song-title").innerText = "Kallo";
+            document.getElementById("artist").innerText = "Ajay Hooda";
+          } else if (currentSong === 4) {
+            song4.play();
+            document.getElementById("song-title").innerText = "Lover";
+            document.getElementById("artist").innerText = "Taylor Swift";
+          }
+          ctrlIcon.classList.add("fa-pause");
+          ctrlIcon.classList.remove("fa-play");
+        }
+      }
+
+      function forward() {
+        if (currentSong < 4) currentSong++;
+        else currentSong = 1;
+        updateThumbnail(); // Update thumbnail
+        playPause();
+      }
+
+      function backward() {
+        if (currentSong > 1) currentSong--;
+        else currentSong = 4;
+        updateThumbnail(); // Update thumbnail
+        playPause();
+      }
+
+      // Pause the song by default
+      song.pause();
+      song2.pause();
+      song3.pause();
+      song4.pause();
+      ctrlIcon.classList.remove("fa-pause");
+      ctrlIcon.classList.add("fa-play");
+
+      // Update progress bar for all songs
+      song.onloadedmetadata =
+        song2.onloadedmetadata =
+        song3.onloadedmetadata =
+        song4.onloadedmetadata =
+          function () {
+            progress.max = this.duration;
+            progress.value = this.currentTime;
+          };
+
+      // Update progress bar when song is playing
+      song.ontimeupdate =
+        song2.ontimeupdate =
+        song3.ontimeupdate =
+        song4.ontimeupdate =
+          function () {
+            progress.value = this.currentTime;
+          };
+
+      progress.onchange = function () {
+        // Determine which song is playing and update its time
+        if (currentSong === 1) {
+          song.currentTime = progress.value;
+        } else if (currentSong === 2) {
+          song2.currentTime = progress.value;
+        } else if (currentSong === 3) {
+          song3.currentTime = progress.value;
+        } else if (currentSong === 4) {
+          song4.currentTime = progress.value;
+        }
+      };
+    </script>
+  </body>
+</html>
